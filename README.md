@@ -1,6 +1,13 @@
 # Disaster Response Pipeline Project
 ### By Amar Singh (Date: 7/7/2020)
 
+## Table of Content:
+ - Requirements
+ - Instructions
+ - Project Overview
+ - Licensing, Authors, Acknowledgements
+
+
 ## Requirements 
 
  - Python 3.5 or higher
@@ -20,7 +27,7 @@
 3. Go to http://0.0.0.0:3001/
 
 
-## Project Overview
+## Project Overview:
 
 In this course, I've learned and built on my data engineering skills to expand my opportunities and potential as a data scientist. In this project, i have applied these skills to analyze disaster data from Figure Eight to build a model for an API that classifies disaster messages.
 
