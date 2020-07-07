@@ -33,7 +33,7 @@ def load_data(database_filepath):
     
     
     engine = create_engine('sqlite:///'+database_filepath)
-    df = pd.read_sql_table('df',engine)
+    df = pd.read_sql_table('amar',engine)
     X = df['message']
     Y = df.iloc[:,4:]
     category_names = Y.columns
@@ -103,7 +103,17 @@ def build_model():
 
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
-   
+    
+    
+    """ NOTE: The Grid search was performed in the ipynb file using below mentioned code and the best parameter were used in this python file"""
+    #parameters = {'features__text_pipeline__vect__max_df':[0.5,1.0],'features__text_pipeline__vect__max_features': (None, 5000),
+    #'features__text_pipeline__tfidf__use_idf': (True, False)
+    #}
+
+    # create grid search object
+    #cv = GridSearchCV(pipeline,param_grid=parameters)
+    
+    
     return model
 
 def evaluate_model(model, X_test, Y_test, category_names):
@@ -122,7 +132,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
     #_pred2  = cv.predict(X_test)
     Y_pred2_df = pd.DataFrame(y_pred,columns=Y_test.columns)
     for column_name in Y_test.columns:
-        #rint("Features Name {}".format(column_name)
+        print("Features Name {}".format(column_name))
         print(classification_report(Y_pred2_df[column_name],Y_test[column_name]))
     
     pass
