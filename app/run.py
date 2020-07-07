@@ -53,7 +53,7 @@ class StartingVerbExtractor(BaseEstimator, TransformerMixin):
 
 # load data
 engine = create_engine('sqlite:///../data/DisasterResponse.db')
-df = pd.read_sql_table('df', engine)
+df = pd.read_sql_table('amar', engine)
 
 # load model
 model = joblib.load("../models/classifier.pkl")
